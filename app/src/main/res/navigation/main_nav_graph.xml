@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.emparejapp.ui.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="player1"
+            app:argType="string" />
+        <argument
+            android:name="player2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_gameFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.emparejapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.emparejapp.ui.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="player1"
+            app:argType="string" />
+        <argument
+            android:name="player2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_menuFragment_to_mediumFragment"
+            app:destination="@id/mediumFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_hardFragment"
+            app:destination="@id/hardFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hardFragment"
+        android:name="com.example.emparejapp.ui.HardFragment"
+        android:label="fragment_hard"
+        tools:layout="@layout/fragment_hard" >
+        <argument
+            android:name="player1"
+            app:argType="string" />
+        <argument android:name="player2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_hardFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediumFragment"
+        android:name="com.example.emparejapp.ui.MediumFragment"
+        android:label="fragment_medium"
+        tools:layout="@layout/fragment_medium" >
+        <argument android:name="player1"
+            app:argType="string" />
+        <argument
+            android:name="player2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mediumFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.emparejapp.ui.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/scoresFragment"
+        android:name="com.example.emparejapp.ui.ScoresFragment"
+        android:label="fragment_scores"
+        tools:layout="@layout/fragment_scores" />
+</navigation>
